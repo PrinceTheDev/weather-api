@@ -58,67 +58,64 @@ Ensure you have the following installed on your machine:
    ```bash
    git clone https://github.com/your-username/weather-forecast-app.git
    cd weather-forecast-app
-Backend Setup (Django):
 
-Navigate to the backend directory:
+## Backend Setup (Django):
 
-bash
-Copy code
+### Navigate to the backend directory:
+
+```bash
 cd backend
 Create a virtual environment:
 
-bash
-Copy code
+```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install the required dependencies:
 
-bash
-Copy code
+### Install the required dependencies:
+
+```bash
 pip install -r requirements.txt
 Create a .env file in the backend directory and add your OpenWeatherMap API key:
 
-bash
-Copy code
+```bash
 OPEN_WEATHER_API=your_openweather_api_key
 Run migrations and start the Django development server:
 
-bash
-Copy code
+```bash
 python manage.py migrate
 python manage.py runserver
+
 The Django server will be running at http://localhost:8000/.
 
-Frontend Setup (React):
+## Frontend Setup (React):
 
-Navigate to the frontend directory:
+### Navigate to the frontend directory:
 
-bash
-Copy code
+```bash
 cd ../frontend
+
 Install the required dependencies:
 
-bash
-Copy code
+```bash
 npm install
+
 Start the React development server:
 
-bash
-Copy code
+```bash
 npm start
+
 The React app will be running at http://localhost:3000/.
 
-API Endpoints
+## API Endpoints
 The backend exposes the following API endpoint:
 
 GET /api/weather/?city={city_name} - Fetches the current weather and 5-day forecast for the specified city.
-Usage
+## Usage
 Open your browser and navigate to http://localhost:3000/.
 Enter the name of the city you want to search for in the input field.
 Click the "Get Weather" button to fetch and display the weather data.
-Project Structure
-csharp
-Copy code
+## Project Structure
+```bash
 weather-forecast-app/
 │
 ├── backend/                 # Django Backend
@@ -142,7 +139,7 @@ weather-forecast-app/
 ├── .gitignore
 ├── README.md
 └── requirements.txt         # Python dependencies
-Styling
+## Styling
 The frontend is styled using a combination of Bootstrap and custom CSS. The main styling adjustments include:
 
 Weather Cards: Weather data is displayed in cards with rounded corners, shadows, and padding.
@@ -152,15 +149,15 @@ Weather Icons: The UI supports displaying weather icons based on the weather con
 Contributing
 Contributions are welcome! If you have any ideas or suggestions to improve the project, please open an issue or submit a pull request.
 
-Fork the repository.
+## Fork the repository.
 Create a new branch (git checkout -b feature-branch).
 Commit your changes (git commit -m 'Add some feature').
 Push to the branch (git push origin feature-branch).
 Open a pull request.
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgments
+## Acknowledgments
 OpenWeatherMap for the weather data API.
 Bootstrap for the UI components.
 Django REST framework for simplifying API development.
