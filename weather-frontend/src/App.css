@@ -1,33 +1,98 @@
+/* General App Styling */
 .App {
   text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Header Styling */
 .App-header {
-  background-color: #282c34;
+  background-color: #1e90ff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+/* Input Group Styling */
+.input-group {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input.form-control {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+button.btn {
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  border: none;
+  padding: 10px 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Weather Cards Styling */
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  padding: 15px;
+  text-align: left;
 }
 
+.card-body {
+  padding: 10px;
+}
+
+/* Date and Weather Description Styling */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+/* Error Message Styling */
+.alert-danger {
+  color: white;
+  background-color: #ff4c4c;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* Loading Spinner Styling */
+.spinner-border {
+  color: #1e90ff;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .card {
+    margin: 10px 0;
+  }
+}
+
+/* Picture Styling */
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Animation for Loading */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +101,4 @@
     transform: rotate(360deg);
   }
 }
+
