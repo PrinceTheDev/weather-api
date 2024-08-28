@@ -1,20 +1,19 @@
-from django.http import JsonResponse
-from rest_framework.decorators import api_view
 import requests
-from django.conf import settings
+from django.http import JsonResponse
+import os
 
 
-
-@api_view(['GET'])
 def get_weather(request):
-    city = request.GET.get('city', '')
-    api_key = settings.OPEN_WEATHER_API
-
-    if not city:
-        return JsonResponse({'error': 'City parameter is required'}, status=400)
-    url = f'http://api.openweathermap.org/data/2.5/forecast/daily?q={city}&cnt=7&appid={api_key}&units=metric'
+    city = request.GET.get('city')
+    api_key = os.getenv('OPEN_WEATHER_API')  # Fetch API key from .env
+    if not api_key:
+        return JsonResponse({"error": "API key is missing"}, status=500)
+    
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    
     response = requests.get(url)
-    if response.status_code != 200:
-        return JsonResponse({'error': Error fetching weather data}, status=response.status_code)
+    if response.status_code == 200:
+        return JsonResponse(response.json())
+    else:
+        return JsonResponse(response.json(), status=response.status_code)
 
-    return JsonResponse(response.json())
