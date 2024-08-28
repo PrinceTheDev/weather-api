@@ -12,11 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-import dotenv
+from dotenv import load_dotenv
 
-
-dotenv.load_dotenv()
-
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-OPEN_WEATHER_API = os.environ.get('OPEN_WEATHER_API')
+OPEN_WEATHER_API = os.getenv('OPEN_WEATHER_API')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
